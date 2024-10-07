@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    height: auto; 
+    overflow: hidden; 
+}
+header img{
+    width: 14rem;
+    margin-top: 15px;
+    padding-top: 7px;
+}
+
