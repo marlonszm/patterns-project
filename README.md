@@ -4,16 +4,12 @@
 ![Deployment](https://img.shields.io/github/deployments/marlonszm/patterns-project/production)
 ![Pull Requests](https://img.shields.io/github/issues-pr/marlonszm/patterns-project)
 ![Last Commit](https://img.shields.io/github/last-commit/marlonszm/patterns-project)
-![Commit Activity](https://img.shields.io/github/commit-activity/m/marlonszm/patterns-project)
 
+![Commit Activity](https://img.shields.io/github/commit-activity/m/marlonszm/patterns-project)
 ![Languages](https://img.shields.io/github/languages/top/marlonszm/patterns-project)
 ![Contributors](https://img.shields.io/github/contributors/marlonszm/patterns-project)
 ![Release](https://img.shields.io/github/v/release/marlonszm/patterns-project)
-![License](https://img.shields.io/github/license/marlonszm/patterns-project)
-
-
-
-
+![License](https://img.shields.io/github/license/marlonszm/patterns-project?style=flat-square)
 
 ## Description
 
