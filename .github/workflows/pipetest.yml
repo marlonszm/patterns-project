@@ -16,16 +16,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Python
+       - name: Set up Python (latest version)
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Ou a versão que você usa no seu projeto
+          python-version: 'latest'
+
+      - name: Verify Python version
+        run: python --version
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Instala as dependências do seu projeto
+          pip install -r requirements.txt
 
       - name: Run tests
         run: |
-          pytest --maxfail=1 --disable-warnings -q  # Executa os testes
+          pytest --maxfail=1 --disable-warnings -q
