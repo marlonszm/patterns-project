@@ -3,72 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Prediction</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visualização de Gráficos</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Employee Prediction</h1>
-    
-    <form method="POST" action="/predict">
-        <label for="JoiningYear">Joining Year:</label>
-        <input type="number" id="JoiningYear" name="JoiningYear" required><br>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 id="TitleLogo">Patterns</h1>
+            <nav>
+                <ul>
+                    <li><a href="/templates/index.html">Home</a></li>
+                    <li><a href="/templates/graficos.html">Graphs</a></li>
+                    <li><a href="/templates/data.html">Upload Data</a></li>
+                    <li><a href="/templates/sobre.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <label for="PaymentTier">Payment Tier (1 to 3):</label>
-        <select id="PaymentTier" name="PaymentTier" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select><br>
+    <!-- Main Content -->
+    <main class="container" id="Explain">
+    <h1>About the Project</h1>
+        <!-- Explanatory Sections -->
+        <section class="info-section">
+            <div class="info-box">
+                <h3>Objective</h3>
+                <p>This website's main objective is to show and explain in a visual way the importance of analyzing, processing and validating data using Artificial Intelligence in order to help companies prevent possible reasons for dismissal.</p>
+            </div>
+            <div class="info-box">
+                <h3>Methodology</h3>
+                <p>Our methodology involved preprocessing the data, training multiple machine learning models, and evaluating their performance. We conducted testing on both back-end and front-end components, ensuring functionality and system integration through automated tools.</p>
+            </div>
+            <div class="info-box">
+                <h3>Preprocessing</h3>
+                <p>Data preprocessing transforms raw data into structured, useful formats. It is essential for analysis and modeling, ensuring relevant data selection and reliable results. Without a properly prepared Dataset, analysis and modeling results may be inaccurate or invalid. Therefore, carrying out adequate pre-processing is essential to ensure the quality and reliability of the conclusions obtained.</p>
+            </div>
+        </section>
 
-        <label for="Age">Age:</label>
-        <input type="number" id="Age" name="Age" required><br>
 
-        <label for="EverBenched">Ever Benched?</label>
-        <select id="EverBenched" name="EverBenched" required>
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </select><br>
+        <h1>About the Datasets</h1>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn" data-target="#objective">Features</button>
+                <button class="tab-btn" data-target="#methodology">Information</button>
+                <button class="tab-btn" data-target="#preprocessing">Preprocessing</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-info" id="objective">
+                    <h3>Features</h3>
+                    <p>The selected attributes were JoiningYear, PaymentTier, Age, EverBenched, ExperienceInCurrentDomain, LeaveOrNot, Female, Male, Bachelors, Masters, and PHD.</p>
+                </div>
+                
+                <div class="tab-info" id="methodology">
+                    <h3>Information</h3>
+                    <p>The dataset, with 1810 instances, is vital for understanding employee turnover. It offers insights into factors influencing retention, helping organizations make informed decisions to improve workforce stability.</p>
+                </div>
 
-        <label for="ExperienceInCurrentDomain">Experience in Current Domain:</label>
-        <input type="number" id="ExperienceInCurrentDomain" name="ExperienceInCurrentDomain" required><br>
+                <div class="tab-info" id="preprocessing">
+                    <h3>Preprocessing</h3>
+                    <p>The preprocessing involved cleaning and normalizing the data, ensuring it was ready for model training. Categorical features were encoded, and the dataset was split into training and testing sets to evaluate model performance effectively. This step ensured the data's quality and consistency for accurate predictions.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        <label>Gender:</label><br>
-        <label for="Female">Female</label>
-        <input type="radio" id="Female" name="Sexo" value="1" required>
-        <label for="Male">Male</label>
-        <input type="radio" id="Male" name="Sexo" value="0" required><br>
-
-        <label for="Education">Education Level:</label>
-        <select id="Education" name="Education" required>
-            <option value="Bachelors">Bachelors</option>
-            <option value="Masters">Masters</option>
-            <option value="PHD">PHD</option>
-        </select><br>
-
-        <input type="submit" value="Submit">
-    </form>
-
-    {% if prediction_result %}
-        <h2>Prediction Result: {{ prediction_result }}</h2>
-    {% endif %}
-    
-    <script>
-        document.getElementById('Education').addEventListener('change', function () {
-            let education = this.value;
-            if (education === 'PHD') {
-                document.getElementById('Bachelors').value = 1;
-                document.getElementById('Masters').value = 1;
-                document.getElementById('PHD').value = 1;
-            } else if (education === 'Masters') {
-                document.getElementById('Bachelors').value = 1;
-                document.getElementById('Masters').value = 1;
-                document.getElementById('PHD').value = 0;
-            } else if (education === 'Bachelors') {
-                document.getElementById('Bachelors').value = 1;
-                document.getElementById('Masters').value = 0;
-                document.getElementById('PHD').value = 0;
-            }
-        });
-    </script>
-
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Projeto de Visualização de Dados - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="\static\script.js"></script>
 </body>
 </html>

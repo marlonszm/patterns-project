@@ -1,0 +1,443 @@
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Permite usar centralização com 'nav' */
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-left: 100px;
+    text-align: left;
+}
+
+/* Centralizando a navegação */
+header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-left: 20px; /* Espaçamento entre os botões */
+    position: relative;
+}
+
+
+/* Adicionando linha vertical entre os botões */
+header nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px; /* Ajusta a posição da linha */
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+    opacity: 0.5;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 10px; /* Adiciona um espaçamento interno aos links */
+}
+
+header nav ul li a:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Main Content Styles */
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza as seções em coluna */
+    margin: 20px 0;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+.info-box {
+    width: 60%; /* Define a largura das seções */
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px; /* Espaçamento entre as boxes */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info-box p {
+    font-size: 1rem;
+    color: #666;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+/* Container geral */
+.tab-container {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Botões à esquerda */
+.tab-buttons {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 20px;
+}
+
+.tab-btn {
+    background: none;
+    color: white;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background-color: #555;
+}
+
+/* Conteúdo à direita */
+.tab-content {
+    flex-basis: 70%;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tab-info {
+    display: none; /* Inicialmente, escondemos todas as abas */
+}
+
+.tab-info.active {
+    display: block; /* Exibimos a aba ativa */
+}
+
+.tab-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tab-info p {
+    font-size: 1rem;
+    color: #666;
+}
+.tab-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-buttons {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 10px;
+}
+
+.tab-btn {
+    padding: 10px;
+    margin: 5px 0;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.tab-btn.active {
+    background-color: #555;
+}
+
+.tab-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.tab-info {
+    display: none;
+}
+
+.tab-info.active {
+    display: block;
+}
+
+
+/* Graph Gallery */
+.graph-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.graph {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.graph img {
+    max-width: 100%;
+    height: auto;
+}
+
+.graph p {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Upload Section */
+.upload {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.upload form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.upload input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/*Style - Sobre */
+#info-section-specific {
+    display: flex;
+    flex-direction: column; /* Mantém a estrutura em coluna */
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+#info-section-specific .info-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 60%; /* Define a largura das seções */
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#info-section-specific .info-box img {
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+    width: 150px;
+    height: auto;
+}
+
+#info-section-specific .info-box .text {
+    flex: 1; /* O texto ocupa o espaço restante */
+}
+
+#info-section-specific .info-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#info-section-specific .info-box p {
+    font-size: 1rem;
+    color: #666;
+}
+/*Style - Data */
+
+/* Estilos gerais para o formulário */
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o formulário */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block; /* Garante que o label fique em linha separada */
+}
+
+form input[type="number"],
+form select {
+    width: 100%; /* Preenche toda a largura do container */
+    padding: 10px;
+    margin-bottom: 20px; /* Espaçamento inferior para separar os campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #007BFF; /* Muda a cor da borda ao focar */
+    outline: none; /* Remove a borda padrão */
+}
+
+/* Estilo para o campo Gender */
+form .gender-group {
+    margin-bottom: 20px;
+}
+
+form .gender-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form .gender-group .gender-options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form .gender-group .gender-options label {
+    margin-right: 10px; /* Espaçamento entre os labels */
+}
+
+form .gender-group .gender-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Estilos para o botão de submit */
+form input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* O botão vai ocupar a largura total */
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* Cor de hover */
+}
+
+/* Estilos para o título e container principal */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Ajuste de responsividade para dispositivos menores */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    form label, form input[type="submit"] {
+        font-size: 0.9rem;
+    }
+}
+
