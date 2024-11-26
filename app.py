@@ -38,11 +38,22 @@ def validate_and_process_input(data):
         return validated_data, None
     except ValueError as e:
         return None, f"Erro de validação: {str(e)}"
+@app.route('/', methods=['GET'])
+def home():   
+    return render_template("index.html")
+
+@app.route('/graphs', methods=["GET"])
+def graphs():
+    return render_template("graficos.html")
+
+@app.route('/aboutus', methods=["GET"])
+def about_us():
+    return render_template("sobre.html")
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'GET':
-        return render_template('index.html')
+        return render_template("data.html")
     elif request.method == 'POST':
         raw_data = request.form
         data, error = validate_and_process_input(raw_data)
@@ -51,7 +62,7 @@ def predict():
         processed_data = process_data(data)
         prediction = model.predict(processed_data)
         message = "Left the company" if prediction[0] == 1 else "Didn't leave the company"
-        return render_template("index.html", prediction_result=message)
+        return render_template("data.html", prediction_result=message)
 
 if __name__ == '__main__':
     app.run(debug=True)

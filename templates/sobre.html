@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visualização de Gráficos</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 id="TitleLogo">Project Partners</h1>
+            <nav>
+                <ul>
+                    <ul>
+                        <li><a href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('graphs')}}">Graphs</a></li>
+                        <li><a href="{{url_for('predict')}}">Upload Data</a></li>
+                        <li><a href="{{url_for('about_us')}}">About</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" id="Explain">
+        <section class="intro">
+            <h2>Developers</h2>
+        </section>
+        <!-- Explanatory Sections -->
+        <section id="info-section-specific">
+            <div class="info-box">
+                <img src="../static/img/Marlon.jpeg" alt="Marlon Melo" width="100" height="100">
+                <div class="text">
+                    <h3>Marlon Melo - Back-end Developer / Product Owner</h3>
+                    <p>Responsible for Python development and Artificial Intelligence training, he was responsible for the main functions of the project and is also the general creator.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="../static/img/Tati.jpeg" alt="Tatiana Limongi" width="100" height="100">
+                <div class="text">
+                    <h3>Tatiana Limongi - QA / Software Tester</h3>
+                    <p>Ensures the quality of the software as a whole, designed and automated all testing processes and is also directly linked to project versioning and maintenance.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="../static/img/JV.jpeg" alt="Victor Melo" width="100" height="100">
+                <div class="text">
+                    <h3>Victor Melo - Front-end Developer / DevOps</h3>
+                    <p>Developed a graphical interface to give the end user the best possible experience, also focusing on the security of the project structure as a whole.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="../static/img/Pedro.jpeg" alt="Pedro Sérgio" width="100" height="100">
+                <div class="text">
+                    <h3>Pedro Sérgio - Web Writer / Designer</h3>
+                    <p>Prepared specifications and edited the information provided in the project, also helping to imagine the realization of the final product.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data Analysis Project - All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

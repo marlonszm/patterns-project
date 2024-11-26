@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visualização de Gráficos</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 id="TitleLogo">Project Partners</h1>
+            <nav>
+                <ul>
+                    <ul>
+                        <li><a href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('graphs')}}">Graphs</a></li>
+                        <li><a href="{{url_for('predict')}}">Upload Data</a></li>
+                        <li><a href="{{url_for('about_us')}}">About</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <title>Employee Prediction</title>
+</head>
+<body>
+    <h1>Employee Prediction</h1>
+    <main class="container" id="Explain">
+        <form method="POST" action="/predict">
+            <label for="JoiningYear">Joining Year:</label>
+            <input type="number" id="JoiningYear" name="JoiningYear" required><br>
+    
+            <label for="PaymentTier">Payment Tier (1 to 3):</label>
+            <select id="PaymentTier" name="PaymentTier" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br>
+    
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" required><br>
+    
+            <!-- Gender Group -->
+            <div class="gender-group">
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <input type="radio" id="Female" name="Sexo" value="1" required>
+                    <label for="Female">Female</label>
+                    <input type="radio" id="Male" name="Sexo" value="0" required>
+                    <label for="Male">Male</label>
+                </div>
+            </div>
+    
+            <label for="EverBenched">Ever Benched?</label>
+            <select id="EverBenched" name="EverBenched" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br>
+    
+            <label for="ExperienceInCurrentDomain">Experience in Current Domain:</label>
+            <input type="number" id="ExperienceInCurrentDomain" name="ExperienceInCurrentDomain" required><br>
+    
+            <!-- Education Level at the bottom -->
+            <label for="Education">Education Level:</label>
+            <select id="Education" name="Education" required>
+                <option value="Bachelors">Bachelors</option>
+                <option value="Masters">Masters</option>
+                <option value="PHD">PHD</option>
+            </select><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    
+  
+    </main>
+    
+    </form>
+
+    {% if prediction_result %}
+        <h1 style="
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;">Prediction Result: {{ prediction_result }}</h1>
+    {% endif %}
+    
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data Analysis Project - All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

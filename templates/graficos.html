@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visualização de Gráficos</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 id="TitleLogo">Project Partners</h1>
+            <nav>
+                <ul>
+                    <ul>
+                        <li><a href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('graphs')}}">Graphs</a></li>
+                        <li><a href="{{url_for('predict')}}">Upload Data</a></li>
+                        <li><a href="{{url_for('about_us')}}">About</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    
+    <section class="intro">
+        <h2>Generated Graphs</h2>
+        <p>These graphs represent the data taken from de dataset</p>
+    </section>
+    
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Payment type distribution by gender and age</h3>
+        <iframe src="{{ url_for('static', filename='graphs/distribuicao_tipo_pagamento_genero_idade_boxplot.html') }}" width="100%" height="500"></iframe>
+    </div>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Proportion of exits by gender</h3>
+        <iframe src="{{ url_for('static', filename='graphs/proporcao_saida_genero.html') }}" width="100%" height="500"></iframe>
+    </div>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Heatmap</h3>
+        <iframe src="{{ url_for('static', filename='graphs/heatmap_correlacoes.html') }}" width="100%" height="500"></iframe>
+    </div>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Age histogram</h3>
+        <iframe src="{{ url_for('static', filename='graphs/distribuicao_idade_funcionarios.html') }}" width="100%" height="500"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data Analysis Project - All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
