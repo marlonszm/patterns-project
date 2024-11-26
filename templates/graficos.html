@@ -16,10 +16,12 @@
             <h1 id="TitleLogo">Project Partners</h1>
             <nav>
                 <ul>
-                    <li><a href="/templates/index.html">Home</a></li>
-                    <li><a href="/templates/graficos.html">Graphs</a></li>
-                    <li><a href="/templates/data.html">Upload Data</a></li>
-                    <li><a href="/templates/sobre.html">About</a></li>
+                    <ul>
+                        <li><a href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('graphs')}}">Graphs</a></li>
+                        <li><a href="{{url_for('predict')}}">Upload Data</a></li>
+                        <li><a href="{{url_for('about_us')}}">About</a></li>
+                    </ul>
                 </ul>
             </nav>
         </div>
@@ -32,57 +34,35 @@
         <p>These graphs represent the data taken from de dataset</p>
     </section>
     
-    <section class="graph-gallery">
-        <div class="graph">
-            <img src="/graphs/grafico1.png" alt="Graph 1">
-            <p>Graph 1: Graph description.</p>
-        </div>
-        <div class="graph">
-            <img src="/graphs/grafico2.png" alt="Graph 2">
-            <p>Graph 2: Graph description.</p>
-        </div>
-        <div class="graph">
-            <img src="/graphs/grafico1.png" alt="Graph 1">
-            <p>Graph 1: Graph description.</p>
-        </div>
-        <div class="graph">
-            <img src="/graphs/grafico2.png" alt="Graph 2">
-            <p>Graph 2: Graph description.</p>
-        </div>
-    </section>
-    </main>
-    
-    <main class="container">
-        <section class="intro">
-            <h2>AI results</h2>
-            <p>Take a look into our training results</p>
-        </section>
-    
-        <section class="graph-gallery">
-            <div class="graph">
-                <img src="/graphs/grafico1.png" alt="Graph 1">
-                <p>Graph 1: Graph description.</p>
-            </div>
-            <div class="graph">
-                <img src="/graphs/grafico2.png" alt="Graph 2">
-                <p>Graph 2: Graph description.</p>
-            </div>
-            <div class="graph">
-                <img src="/graphs/grafico1.png" alt="Graph 1">
-                <p>Graph 1: Graph description.</p>
-            </div>
-            <div class="graph">
-                <img src="/graphs/grafico2.png" alt="Graph 2">
-                <p>Graph 2: Graph description.</p>
-            </div>
-        </section>
-    
-    </main>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Payment type distribution by gender and age</h3>
+        <iframe src="{{ url_for('static', filename='graphs/distribuicao_tipo_pagamento_genero_idade_boxplot.html') }}" width="100%" height="500"></iframe>
+    </div>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Proportion of exits by gender</h3>
+        <iframe src="{{ url_for('static', filename='graphs/proporcao_saida_genero.html') }}" width="100%" height="500"></iframe>
+    </div>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Heatmap</h3>
+        <iframe src="{{ url_for('static', filename='graphs/heatmap_correlacoes.html') }}" width="100%" height="500"></iframe>
+    </div>
+    <div>
+        <h3 style="
+        text-align: center;
+        margin-top: 20px;">Age histogram</h3>
+        <iframe src="{{ url_for('static', filename='graphs/distribuicao_idade_funcionarios.html') }}" width="100%" height="500"></iframe>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Projeto de Visualização de Dados - Todos os direitos reservados.</p>
+            <p>&copy; 2024 Data Analysis Project - All Rights Reserved</p>
         </div>
     </footer>
 </body>

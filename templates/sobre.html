@@ -16,10 +16,12 @@
             <h1 id="TitleLogo">Project Partners</h1>
             <nav>
                 <ul>
-                    <li><a href="/templates/index.html">Home</a></li>
-                    <li><a href="/templates/graficos.html">Graphs</a></li>
-                    <li><a href="/templates/data.html">Upload Data</a></li>
-                    <li><a href="/templates/sobre.html">About</a></li>
+                    <ul>
+                        <li><a href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('graphs')}}">Graphs</a></li>
+                        <li><a href="{{url_for('predict')}}">Upload Data</a></li>
+                        <li><a href="{{url_for('about_us')}}">About</a></li>
+                    </ul>
                 </ul>
             </nav>
         </div>
@@ -65,7 +67,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Projeto de Visualização de Dados - Todos os direitos reservados.</p>
+            <p>&copy; 2024 Data Analysis Project - All Rights Reserved</p>
         </div>
     </footer>
 </body>
