@@ -49,4 +49,4 @@ jobs:
 
       - name: Run Selenium tests
         run: |
-          pytest tests/test_app_integration.py
+          pytest tests/test_app_integration.py --maxfail=1 --disable-warnings -q
