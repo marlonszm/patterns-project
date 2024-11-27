@@ -29,6 +29,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-cov codecov
+          pip install selenium
 
       - name: Run tests with coverage
         run: pytest --cov=. tests/
@@ -37,3 +38,15 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           flags: unittests
+
+      - name: Start Flask server in the background
+        run: |
+          nohup flask run &  
+
+      - name: Wait for Flask server to start
+        run: |
+          sleep 5  
+
+      - name: Run Selenium tests
+        run: |
+          pytest tests/test_app_integration.py --maxfail=1 --disable-warnings -q
