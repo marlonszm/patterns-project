@@ -34,9 +34,9 @@ jobs:
         run: |
           pytest --maxfail=1 --disable-warnings -q
 
-      - name: Start Flask server in the background
-        run: |
-          nohup python app.py &
+          - name: Start Flask server in the background
+          run: |
+            nohup flask run &  
 
       - name: Wait for Flask server to start
         run: |

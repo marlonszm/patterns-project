@@ -41,7 +41,7 @@ jobs:
 
       - name: Start Flask server in the background
         run: |
-          nohup python app.py &
+          nohup flask run &  
 
       - name: Wait for Flask server to start
         run: |
