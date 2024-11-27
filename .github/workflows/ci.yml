@@ -20,11 +20,21 @@ jobs:
         with:
           python-version: "3.12.5"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
       - name: Install pytest-cov
         run: pip install pytest-cov
 
       - name: Run tests with coverage
         run: pytest --cov=tests
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install selenium
+
+      - name: Start Flask server in the background
+        run: |
+          nohup python app.py &
+
+      - name: Run Selenium tests
+        run: |
+          pytest tests/test_app_integration.py
